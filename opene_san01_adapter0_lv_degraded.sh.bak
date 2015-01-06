@@ -1,0 +1,1 @@
+ssh  -i $2 -2 -p 22223 -l api $1  get_raidstatus |  grep "Adapter #0"  -A 154 -m1 | grep "Degraded" | awk -F": " '{ print $2 }'  
